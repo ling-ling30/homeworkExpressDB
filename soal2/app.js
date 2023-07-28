@@ -3,11 +3,12 @@ const app = express();
 const pool = require("./db/db");
 const port = 3000;
 const api_film_router = require("./routes/api_film");
-const env = require("dotenv");
-env.config();
+
+const notFound = require("./middleware/error-handler");
+require("dotenv").config();
 
 app.use("/api/films", api_film_router);
-
+app.use(notFound);
 pool
   .connect()
   .then(() => {
