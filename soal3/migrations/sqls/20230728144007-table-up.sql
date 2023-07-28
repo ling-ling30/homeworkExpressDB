@@ -1,0 +1,3 @@
+
+ALTER TABLE actor
+      ADD COLUMN age INTEGER;

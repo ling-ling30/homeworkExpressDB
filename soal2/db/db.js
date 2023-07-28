@@ -3,13 +3,14 @@ require("dotenv").config();
 const dbHost = process.env.DB_HOST;
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASSWORD;
+const dbName = process.env.DB_NAME;
 
 const dbConfig = {
-  user: dbUser, //postgres
-  password: dbPassword, //postgres
-  host: dbHost, //localhost
+  user: dbUser,
+  password: dbPassword,
+  host: dbHost,
   port: 5432, // Default PostgreSQL port is 5432
-  database: "dvd",
+  database: dbName,
 };
 
 const pool = new Pool(dbConfig);
